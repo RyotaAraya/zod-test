@@ -1,0 +1,24 @@
+# Node.js 環境に必要な一般的な設定
+
+# node_modules ディレクトリ
+node_modules/
+
+# TypeScript コンパイル後の出力ディレクトリ
+dist/
+
+# 環境変数や秘密情報が含まれる可能性のあるファイル
+.env
+.env.local
+.env.*.local
+
+# TypeScript キャッシュファイル
+*.tsbuildinfo
+
+# OS/IDE によって生成される不要なファイル
+
+# MacOS
+.DS_Store
+
+# VSCode
+.vscode/
+*.code-workspace
