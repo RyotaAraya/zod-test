@@ -1,0 +1,19 @@
+{
+  "name": "validation-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "valibot": "^1.0.0-beta.12",
+    "zod": "^3.24.1"
+  }
+}
