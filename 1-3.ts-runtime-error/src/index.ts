@@ -14,7 +14,7 @@ const validData: User = {
 
 // invalidData の型アサーション（ランタイムエラー検知を省略）
 const invalidData = {
-  id: "not-a-number",
+  id: "0",
   name: "Jane Doe",
   email: "invalid-email",
 } as unknown as User; // 強制的に型を一致させる

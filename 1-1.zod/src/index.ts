@@ -12,14 +12,14 @@ type User = z.infer<typeof UserSchema>;
 
 // 意図した型
 const validData: User = {
-  id: 1,
+  id: 0,
   name: "John Doe",
   email: "john.doe@example.com",
 };
 
 // 意図してない型
 const invalidData = {
-  id: "not-a-number", // 型が間違っている
+  id: "0", // 型が間違っている
   name: "Jane Doe",
   email: "invalid-email", // 無効なメール形式
 };
@@ -48,7 +48,7 @@ console.log("-----------------------------------");
 
 // 後続の処理
 if (validatedUser) {
-  console.log(`id: ${validatedUser.id} ユーザ名: ${validatedUser.name} メールアドレス: ${validatedUser.email}`);
+  console.log(`id: ${validatedUser.id + 1} ユーザ名: ${validatedUser.name} メールアドレス: ${validatedUser.email}`);
 } else {
   console.log("ユーザ取得に失敗しました。");
 }
