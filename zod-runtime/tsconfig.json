@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",         // コンパイル結果の出力先
+    "rootDir": "./src",         // ソースコードのルート
+    "module": "ESNext",         // ES Module を使用
+    "moduleResolution": "node",
+    "target": "ESNext",         // 実行環境に合わせたターゲット
+    "strict": true,             // 厳密モード
+    "esModuleInterop": true,    // ES モジュールと CommonJS の互換性
+    "skipLibCheck": true        // ライブラリ型のチェックをスキップ（高速化）
+  },
+  "include": ["src"],           // コンパイル対象のフォルダ
+  "exclude": ["node_modules"]   // 除外するフォルダ
+}
