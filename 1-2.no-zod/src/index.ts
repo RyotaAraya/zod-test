@@ -44,11 +44,9 @@ const validateUser = (data: User) => {
 const randomData = getRandomData() as User;
 const validatedUser = validateUser(randomData);
 
-console.log("Result:", validatedUser);
-console.log("-----------------------------------");
-
 // 後続の処理
 if (validatedUser) {
+  console.log('意図したデータです：', randomData);
   console.log(`id: ${validatedUser.id} ユーザ名: ${validatedUser.name} メールアドレス: ${validatedUser.email}`);
 } else {
   console.log("ユーザ取得に失敗しました。");

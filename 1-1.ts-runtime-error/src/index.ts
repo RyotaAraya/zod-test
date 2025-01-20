@@ -28,7 +28,7 @@ const getRandomData = (): User => {
 const randomData = getRandomData();
 
 if (typeof randomData.id === 'number') {
-  console.log('意図したデータを取得しました', randomData);
+  console.log('意図したデータです：', randomData);
 }
 else {
   console.log('意図してないデータを取得しました', randomData); 

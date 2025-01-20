@@ -34,7 +34,9 @@ const validateUser = (user: User)=> {
   try {
     return UserSchema.parse(user); // スキーマで検証
   } catch (error) {
-    console.error("Validation failed:", error);
+    if (error instanceof z.ZodError) {
+      console.error("検証失敗:", error.errors);
+    } 
     return null;
   }
 };
@@ -43,11 +45,9 @@ const validateUser = (user: User)=> {
 const randomData = getRandomData() as User;
 const validatedUser = validateUser(randomData);
 
-console.log("Result:", validatedUser);
-console.log("-----------------------------------");
-
 // 後続の処理
 if (validatedUser) {
+  console.log('意図したデータです：', randomData);
   console.log(`id: ${validatedUser.id + 1} ユーザ名: ${validatedUser.name} メールアドレス: ${validatedUser.email}`);
 } else {
   console.log("ユーザ取得に失敗しました。");
