@@ -8,7 +8,7 @@ const UserSchema = z.object({
 });
 
 // 型定義
-type User = z.infer<typeof UserSchema>;
+type User = z.infer<typeof UserSchema>; // <---------- new
 
 // 意図した型
 const validData: User = {
@@ -22,7 +22,7 @@ const invalidData = {
   id: "0", // 型が間違っている
   name: "Jane Doe",
   email: "invalid-email", // 無効なメール形式
-};
+} as unknown as User;
 
 // ランダム
 const getRandomData = () => {
@@ -32,7 +32,7 @@ const getRandomData = () => {
 // データを検証する関数
 const validateUser = (user: User)=> {
   try {
-    return UserSchema.parse(user); // スキーマで検証
+    return UserSchema.parse(user); // <--- new スキーマで検証
   } catch (error) {
     if (error instanceof z.ZodError) {
       console.error("検証失敗:", error.errors);
@@ -47,8 +47,7 @@ const validatedUser = validateUser(randomData);
 
 // 後続の処理
 if (validatedUser) {
-  console.log('意図したデータです：', randomData);
   console.log(`id: ${validatedUser.id + 1} ユーザ名: ${validatedUser.name} メールアドレス: ${validatedUser.email}`);
-} else {
-  console.log("ユーザ取得に失敗しました。");
 }
+console.log('result:', randomData);
+
