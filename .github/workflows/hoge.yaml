@@ -1,3 +1,7 @@
+name: GitHub Actions Demo
+
+on: [push]
+
 jobs:
   echo_hello:
     runs-on: ubuntu-latest
